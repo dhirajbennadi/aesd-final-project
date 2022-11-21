@@ -28,10 +28,10 @@ int messageArrived(void *context, char *topicName, int topicLen, MQTTClient_mess
 int main(void) {
     int rc = 1; // return code
     int qos = 1;
-    //int retained = 0;
+    int retained = 0;
     MQTTClient client;
     // the serverURI has to be in the format "protocol://name:port", in this case it should be "ssl://name:8883"
-    MQTTClient_create(&client, "ssl://b5feec6d24bf4ded89cbd15945207fb9.s2.eu.hivemq.cloud:8883", "Spidey",
+    MQTTClient_create(&client, "ssl://b5feec6d24bf4ded89cbd15945207fb9.s2.eu.hivemq.cloud:8883", "Publisher",
         MQTTCLIENT_PERSISTENCE_NONE, NULL);
 
     // you can set optional callbacks for context, connectionLost, messageArrived and deliveryComplete
@@ -64,17 +64,17 @@ int main(void) {
 
     // the topic where you publish to and subscribe to
     const char* topic = "Dhiraj/Level1";
-    MQTTClient_subscribe(client, topic, qos);
-    printf("subscribed to %s \n", topic);
+    //MQTTClient_subscribe(client, topic, qos);
+    //printf("subscribed to %s \n", topic);
 
     //payload the content of your message
     while(1)
     {
-    //char* payload = "Hello Spidey";
-    //int payloadlen = strlen(payload);
-    //MQTTClient_deliveryToken dt;
-    //MQTTClient_publish(client, topic, payloadlen, payload, qos, retained, &dt);
-    //printf("published to %s \n", topic);
+    char* payload = "Hello Dhiraj Bennadi";
+    int payloadlen = strlen(payload);
+    MQTTClient_deliveryToken dt;
+    MQTTClient_publish(client, topic, payloadlen, payload, qos, retained, &dt);
+    printf("published to %s \n", topic);
     sleep(1);
     }
 

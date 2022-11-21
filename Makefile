@@ -1,4 +1,5 @@
-SRCS = $(wildcard *.c)
+#SRCS = $(wildcard *.c)
+SRCS = subscribeApp.c
 OBJS = $(SRCS:.c=.o)
 
 ifeq ($(CC),)

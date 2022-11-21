@@ -31,7 +31,7 @@ int main(void) {
     //int retained = 0;
     MQTTClient client;
     // the serverURI has to be in the format "protocol://name:port", in this case it should be "ssl://name:8883"
-    MQTTClient_create(&client, "ssl://b5feec6d24bf4ded89cbd15945207fb9.s2.eu.hivemq.cloud:8883", "Spidey",
+    MQTTClient_create(&client, "ssl://b5feec6d24bf4ded89cbd15945207fb9.s2.eu.hivemq.cloud:8883", "Subscriber",
         MQTTCLIENT_PERSISTENCE_NONE, NULL);
 
     // you can set optional callbacks for context, connectionLost, messageArrived and deliveryComplete
