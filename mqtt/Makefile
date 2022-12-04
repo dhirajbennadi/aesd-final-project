@@ -1,5 +1,5 @@
-SRCS = $(wildcard *.c)
-#SRCS = subscribeApp.c
+#SRCS = $(wildcard *.c)
+SRCS = mqttApp.c
 OBJS = $(SRCS:.c=.o)
 
 ifeq ($(CC),)
