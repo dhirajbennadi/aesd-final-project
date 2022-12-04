@@ -19,7 +19,7 @@ ifeq ($(TARGET_BUILD),1)
 	CUSTOMFLAGS = -DTARGET_BUILD
 endif
 
-TARGET = mqttapp 
+TARGET = mqttify 
 all: $(TARGET)
 default: $(TARGET)
 
