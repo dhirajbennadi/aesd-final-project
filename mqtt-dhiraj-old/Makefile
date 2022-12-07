@@ -1,4 +1,5 @@
 SRCS = $(wildcard *.c)
+#SRCS = subscribeApp.c
 OBJS = $(SRCS:.c=.o)
 
 ifeq ($(CC),)
@@ -18,7 +19,7 @@ ifeq ($(TARGET_BUILD),1)
 	CUSTOMFLAGS = -DTARGET_BUILD
 endif
 
-TARGET = subscriber 
+TARGET = mqttify 
 all: $(TARGET)
 default: $(TARGET)
 
